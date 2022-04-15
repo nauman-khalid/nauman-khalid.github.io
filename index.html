@@ -1,0 +1,84 @@
+
+1
+<?xml version="1.0" encoding="UTF-8" ?>
+2
+<!DOCTYPE html>
+3
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+4
+  <head>
+5
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+6
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' type='text/javascript'/>   
+7
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i|Indie+Flower' media='all' rel='stylesheet' type='text/css'/>
+8
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'/>
+9
+ <link href='//cdn.linearicons.com/free/1.0.0/icon-font.min.css' rel='stylesheet'/>
+10
+​
+11
+    <b:include data='blog' name='all-head-content'/>
+12
+    <title>
+13
+        <b:if cond='data:blog.pageType == &quot;index&quot;'>
+14
+            <data:blog.pageTitle/>
+15
+        <b:else/>
+16
+            <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+17
+                <data:blog.pageName/> - <data:blog.title/>
+18
+            <b:else/>
+19
+                ERROR 404 - <data:blog.title/> 
+20
+            </b:if>
+21
+        </b:if>
+22
+    </title>
+23
+    <!-- Description and Keywords (start) -->
+24
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+25
+    <meta content='YOUR DESCRIPTION HERE' name='description'/>
+26
+    </b:if>
+27
+    <meta content='YOUR KEYWORDS HERE' name='keywords'/>
+28
+    <!-- Description and Keywords (end) -->
+29
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+30
+        <meta expr:content='data:blog.pageName' property='og:title'/>
+31
+        <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+32
+        <meta content='article' property='og:type'/>
+33
+    </b:if>
+34
+    <b:if cond='data:blog.postImageUrl'>
+35
+        <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+36
+    <b:else/>
+37
+    <b:if cond='data:blog.postImageThumbnailUrl'>
+38
+        <meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+39
+    </b:if></b:if>
+40
+    <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+41
+        <meta expr:content='data:blog.metaDescription' name='og:description'/>
+Template: Edit template
